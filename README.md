@@ -21,4 +21,22 @@ The algorithm returns an **optimal path**, that is, with shortest possible opera
   ## Terrain Map
   A matrix with H rows (where H is a strictly positive integer) and W columns (W is also a strictly positive integer) will be given, with a Z elevation value (an integer number, to avoid rounding problems) specified in every cell of the WxH map. For example:
   
-![](images/terrain.png)
+![](images/hw1_map.png)
+
+is a map with W=3 columns and H=2 rows, and each cell contains a Z value (in arbitrary units). By convention, we will use North (N), East (E), South (S), West (W) as shown above to describe motions from one cell to another. In the above example, Z elevation in the North West corner of the map is 10, and Z elevation in the South East corner is 14.
+
+## Input
+The file input.txt in the current directory of your program will be formatted as follows:
+- **First line:** Instruction of which algorithm to use, as a string: BFS, UCS or A*
+- **Second line:** Two strictly positive 32-bit integers separated by one space character, for “W H” the number of columns (width) and rows (height), in cells, of the map.
+- **Third line:** Two positive 32-bit integers separated by one space character, for “X Y” the coordinates (in cells) of the landing site. 0 <= X <= W-1 and 0 <= Y <= H-1 (that is, we use 0-based indexing into the map; X increases when moving East and Y increases when moving South; (0,0) is the North West corner of the map).
+- **Fourth line:** Positive 32-bit integer number for the maximum difference in elevation between two adjacent cells which the rover can drive over. The difference in Z between two adjacent cells must be **smaller than or equal (<=)** to this value for the rover to be able to travel from one cell to the other.
+- **Fifth line:** Strictly positive 32-bit integer **N, the number of target sites.**
+- **Next N lines:** Two positive 32-bit integers separated by one space character, for “X Y” the coordinates (in cells) of each target site. 0 <= X <= W-1 and 0 <= Y <= H-1 (that is, we again use 0-based indexing into the map).
+- **Next H lines:** W 32-bit integer numbers separated by any numbers of spaces for the elevation (Z) values of each of the W cells in each row of the map.
+
+## Output
+The file output.txt which your program creates in the current directory should be formatted as follows:
+- **N lines:** Report the paths in the same order as the targets were given in the input.txt file. Write out one line per target. Each line should contain a sequence of X,Y pairs of coordinates of cells visited by the rover to travel from the landing site to the corresponding target site for that line. Only use a single comma and no space to separate X,Y and a single space to separate successive X,Y entries. If no solution was found (target site unreachable by rover from given landing site), write a single word **FAIL** in the corresponding line.
+
+**Sample testcase can be found in this respository (sampletestcase.txt)**
