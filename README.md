@@ -39,4 +39,4 @@ The file input.txt in the current directory of your program will be formatted as
 The file output.txt which your program creates in the current directory should be formatted as follows:
 - **N lines:** Report the paths in the same order as the targets were given in the input.txt file. Write out one line per target. Each line should contain a sequence of X,Y pairs of coordinates of cells visited by the rover to travel from the landing site to the corresponding target site for that line. Only use a single comma and no space to separate X,Y and a single space to separate successive X,Y entries. If no solution was found (target site unreachable by rover from given landing site), write a single word **FAIL** in the corresponding line.
 
-**Sample testcase can be found in this respository (sampletestcase.txt)**
+**Sample testcases can be found in this respository (sampletestcase.txt, sampletestcase2.txt)**
